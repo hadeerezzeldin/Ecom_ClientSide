@@ -1,0 +1,67 @@
+<!-- <p>shop works!</p> -->
+ <!-- <ul>
+    @for(item of product;track $index){
+        <li>{{item.productName}}</li>
+    }
+</ul> -->
+<div class="container mt-5">
+    <div class="row">
+        <h1 class="main-title">Shopping</h1>
+
+        <section class="col-md-3">
+            <div class="sidebar">
+                <h4 class="section-title m-2">Sorting</h4>
+                <div class="custom-select-wrapper mb-4">
+                    <select #sortSelected name="" class="form-select" id="" (change)="SortingByPrice($event)">
+                    @for(item of SortingOption; track $index){
+                    <option [value]="item.value">{{item.name}}</option>
+                   
+                        }
+                    </select>
+                    </div>
+                    <h4 class="section-title m-2">Category</h4>
+            <ul class="list-group custom-list-group">
+                @for(item of  Category; track $index){
+
+                    <li (click)="SelectedCategoey(item.id)" [class.active]="item.id==productParam.CategoryId" class="list-group-item custom-list-item">{{item.categoryName}}</li>
+                }
+              
+            </ul>
+
+            </div>
+         
+        </section>
+
+        <section class="col-md-9">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div class="paging-container">
+                    <span class="text-dark">Showing 3 of 5</span>
+                </div>
+                <div class="search-container">
+                    <div class="input-group seaarch-bar">
+                        <input  #search (keyup.enter)="OnSearch(search.value)"  (keypress)="OnSearch(search.value)" class="form form-control" placeholder="Search...">
+                        <input  (click)="OnSearch(search.value)" type="button" class="btn btn-primary"  value="search">
+                        <input (click)="ResetAllValues()" type="button" class="btn btn-danger"  value="Reset">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 ">
+                @for(item of Product; track $index){
+              <ng-container>
+                <app-shop-item class="col-lg-4 col-md-6" [Product]="item"></app-shop-item>
+                <!-- <app-shop-item class="col-lg-4 col-md-6" ></app-shop-item> -->
+
+              </ng-container>
+            }
+              
+            <div class="d-flex justify-content-center m-5">
+                <pagination [itemsPerPage]="1"
+                 [totalItems]="TotalCount"
+                 (pageChanged)="OnChangePage($event.page)"
+                 ></pagination>
+            </div>
+            </div>
+        </section>
+    </div>
+</div>

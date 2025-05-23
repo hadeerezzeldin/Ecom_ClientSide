@@ -1,0 +1,46 @@
+<section class="py-5 d-flex justify-content-center align-items-center min-vh-100 bg-light">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="card shadow-lg border-0 rounded-4">
+          <div class="card-body p-5 bg-white">
+            <h2 class="text-center mb-4 " style="color:purple">Login</h2>
+            <form [formGroup]="formGroup" novalidate  (ngSubmit)="Submit()">
+        
+              <div class="mb-3">
+                <label for="email" class="form-label fw-semibold">Email</label>
+                <input type="email" id="email" class="form-control"
+                  formControlName="email"
+                  [class.is-valid]="_email.valid"
+                  [class.is-invalid]="_email.invalid && _email.touched" />
+                  <div *ngIf="_email.touched && _email.hasError('required')" class="text-danger">
+                         Email is required.
+                        </div>
+                        <div *ngIf="_email.touched && _email.hasError('email')" class="text-danger">
+                        Email format is invalid. Example: test&#64;mail.com
+                        </div>
+              </div>
+
+              <div class="mb-4">
+                <label for="pass" class="form-label fw-semibold">Password</label>
+                <input type="password" id="pass" class="form-control"
+                  formControlName="Password"
+                  [class.is-valid]="_password.valid"
+                  [class.is-invalid]="_password.invalid && _password.touched" />
+                  @if(_password.hasError('required')){
+                    <span class="text-danger">  Password is Required</span>
+                  }
+              </div>
+
+              <button type="submit" class="btn  w-100  fw-bold py-2 rounded-3" style="background-color: purple; color:white; font-size: 18px;" [disabled]="formGroup.invalid">
+                Login <i class="fa fa-sign-in m-1"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+

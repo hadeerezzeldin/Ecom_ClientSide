@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { IProduct } from './shared/Models/Product';
+import { IPagination } from './shared/Models/Pagination';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +9,15 @@ import { Component } from '@angular/core';
   standalone: false,
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+ constructor(private httpClient:HttpClient ){}
+ 
+
+
+  ngOnInit(): void {
+   
+    // throw new Error('Method not implemented.');
+  }
+
   title = 'Ecom_ClientSide';
 }

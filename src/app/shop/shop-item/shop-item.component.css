@@ -1,0 +1,135 @@
+ /* .card{
+    height: 500px;
+
+    margin: 7px;
+    overflow:hidden;
+}  */
+/* .card-body{
+    position:relative;
+}
+.card-img-top{
+    height:150px;
+}
+.thumbnails{
+    display:flex;
+    justify-content: flex-start;
+    gap:3px;
+
+}
+.small-img{
+width: 50px;
+height:50px;
+border: 1px solid transparent;
+transition : 0.5s ease;
+}
+.small-img:hover{
+    transform: scale(1.01);
+}
+.card-title{
+    color: purple;
+    font-size: 22px;
+}
+.price .old-price {
+    margin-right: 7px;
+}
+.favorite-icon i{
+    position: absolute;
+    top:5px;
+    right: 5px;
+    border:none;
+    color: blue;
+}   */
+
+
+.card {
+  height: 400px;
+  width: 300px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 10px;
+  position: relative;
+}
+
+.thumbnails {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 5px;
+  /* white-space: nowrap; */
+  /* overflow-x: auto;  */
+  margin-bottom: 10px;
+}
+
+.small-img {
+  width: 50px;
+  height: 50px;
+    /* display: inline-block; */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.small-img:hover {
+  transform: scale(1.1);
+  border-color: purple;
+}
+
+.card-title {
+  color: purple;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.card-text {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.old-price {
+  margin-right: 7px;
+  color: red;
+}
+
+.new-price {
+  color: green;
+  font-weight: bold;
+}
+
+.favorite-icon {
+  position: absolute;
+  top: 67px;
+  right: 6px;
+  border: none;
+  background: none;
+  color: blue;
+  font-size: 15px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.favorite-icon:hover {
+  transform: scale(1.1);
+  color: rgb(52, 52, 144);
+}
+.btn i {
+  margin-right: 5px;
+}
+

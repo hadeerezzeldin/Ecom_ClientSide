@@ -1,0 +1,4 @@
+.custom-list-group .custom-list-item:hover{
+    background-color: rgb(136, 175, 248);
+    cursor: pointer;
+}
