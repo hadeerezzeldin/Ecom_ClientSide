@@ -23,7 +23,7 @@
             <ul class="list-group custom-list-group">
                 @for(item of  Category; track $index){
 
-                    <li (click)="SelectedCategoey(item.id)" [class.active]="item.id==productParam.CategoryId" class="list-group-item custom-list-item">{{item.categoryName}}</li>
+                    <li (click)="SelectedCategoey(item.id)" [class.active]="item.id==productParam.CategoryId" class="list-group-item custom-list-item" >{{item.categoryName}}</li>
                 }
               
             </ul>
